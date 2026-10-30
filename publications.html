@@ -64,24 +64,75 @@
               FEU Diliman Journals of Business, Accountancy, and Information Technology/General Education.
               Vol. 1 No. 1, 2025.
             </p>
-            <a class="button primary" href="assets/publications/Strategia-V01-I01-2025.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a class="button primary" href="#strategia-reader">Open Flipbook</a>
+            <a class="text-link" href="assets/publications/Strategia-V01-I01-2025.pdf" target="_blank" rel="noopener">View PDF file</a>
           </article>
         </aside>
 
-        <section class="pdf-viewer-shell" aria-label="Embedded PDF viewer">
+        <section class="pdf-viewer-shell" id="strategia-reader" aria-label="Strategia flipbook reader">
           <div class="pdf-viewer-header">
             <div>
-              <p class="eyebrow">PDF Viewer</p>
+              <p class="eyebrow">Flipbook Reader</p>
               <h2>Strategia - Vol. 1 No. 1, 2025</h2>
             </div>
-            <a class="button secondary" href="assets/publications/Strategia-V01-I01-2025.pdf" target="_blank" rel="noopener">View in new tab</a>
+            <div class="viewer-actions">
+              <button class="button secondary compact" type="button" data-flipbook-fullscreen>Full screen</button>
+              <a class="button secondary compact" href="assets/publications/Strategia-V01-I01-2025.pdf" target="_blank" rel="noopener">Open PDF</a>
+            </div>
           </div>
-          <object class="pdf-viewer" data="assets/publications/Strategia-V01-I01-2025.pdf" type="application/pdf">
-            <p>
-              Your browser cannot display this PDF inline.
-              <a href="assets/publications/Strategia-V01-I01-2025.pdf">Open the Strategia PDF</a>.
+          <div class="flipbook" data-flipbook data-pdf-src="assets/publications/Strategia-V01-I01-2025.pdf">
+            <div class="flipbook-toolbar" aria-label="Flipbook controls">
+              <div class="flipbook-button-group">
+                <button type="button" data-flipbook-first aria-label="First page">First</button>
+                <button type="button" data-flipbook-prev aria-label="Previous page">Prev</button>
+              </div>
+              <div class="page-controls">
+                <label for="flipbook-page">Page</label>
+                <input id="flipbook-page" type="number" min="1" value="1" inputmode="numeric" data-flipbook-page>
+                <span data-flipbook-total>of --</span>
+              </div>
+              <div class="zoom-controls">
+                <label for="flipbook-zoom">Zoom</label>
+                <select id="flipbook-zoom" data-flipbook-zoom>
+                  <option value="0.9">90%</option>
+                  <option value="1" selected>100%</option>
+                  <option value="1.15">115%</option>
+                  <option value="1.3">130%</option>
+                </select>
+              </div>
+              <div class="flipbook-button-group">
+                <button type="button" data-flipbook-next aria-label="Next page">Next</button>
+                <button type="button" data-flipbook-last aria-label="Last page">Last</button>
+              </div>
+            </div>
+
+            <div class="flipbook-stage" tabindex="0" role="region" aria-live="polite" aria-label="Strategia pages">
+              <button class="page-turn page-turn-prev" type="button" data-flipbook-prev aria-label="Previous page">Prev</button>
+              <div class="book-spread" data-flipbook-spread>
+                <article class="book-page" data-page-slot="left">
+                  <div class="page-canvas-wrap">
+                    <canvas></canvas>
+                  </div>
+                  <span class="page-number" data-page-label></span>
+                </article>
+                <article class="book-page" data-page-slot="right">
+                  <div class="page-canvas-wrap">
+                    <canvas></canvas>
+                  </div>
+                  <span class="page-number" data-page-label></span>
+                </article>
+              </div>
+              <button class="page-turn page-turn-next" type="button" data-flipbook-next aria-label="Next page">Next</button>
+              <div class="flipbook-status" data-flipbook-status>Loading publication...</div>
+            </div>
+
+            <div class="flipbook-progress">
+              <input type="range" min="1" value="1" data-flipbook-progress aria-label="Publication page progress">
+            </div>
+            <p class="flipbook-fallback" data-flipbook-fallback hidden>
+              The interactive reader is unavailable. <a href="assets/publications/Strategia-V01-I01-2025.pdf" target="_blank" rel="noopener">Open the PDF</a>.
             </p>
-          </object>
+          </div>
         </section>
       </section>
     </main>
@@ -97,5 +148,6 @@
       </address>
     </footer>
     <script src="script.js"></script>
+    <script type="module" src="flipbook.js"></script>
   </body>
 </html>
